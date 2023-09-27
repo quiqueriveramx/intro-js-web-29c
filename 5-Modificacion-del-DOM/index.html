@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="./app.js" defer></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        <input type="checkbox" id="checkbox-1">
+        <label for="checkbox-1">Checkbox-1</label>
+        <h1>Modificacion del DOM</h1>
+    </div>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas, maxime!</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas, maxime!</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas, maxime!</p>
+    <input type="checkbox" id="checkbox">
+    <label for="checkbox">Checkbox</label>
+</body>
+
+<style>
+    div:has(#checkbox-1:checked) h1 {
+        color: red;
+    }
+</style>
+
+</html>
