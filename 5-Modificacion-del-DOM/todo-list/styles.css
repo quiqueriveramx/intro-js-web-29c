@@ -1,0 +1,5 @@
+.task {
+	display: block flex;
+	justify-content: space-between;
+	align-items: center;
+}
