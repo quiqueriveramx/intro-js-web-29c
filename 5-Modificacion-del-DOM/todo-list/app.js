@@ -1,12 +1,18 @@
 const todoInput = document.querySelector('#todo-input');
 const addBtn = document.querySelector('#add');
 const todoListContainer = document.querySelector('#todo-list');
-let idNumber = 1;
+const alertBanner = document.querySelector('#alert')
+let idNumber = 0;
 
 const addHandler = function () {
     const todoText = todoInput.value;
-    createNewTask(todoText);
-    todoInput.value = '';
+    if(todoText !== '') {
+        alertBanner.style.display = 'none';
+        createNewTask(todoText);
+        todoInput.value = '';
+    } else {
+        alertBanner.style.display = 'block';
+    }
 }
 
 const createNewTask = function (text) {
@@ -19,8 +25,8 @@ const createNewTask = function (text) {
             <input type="checkbox" id="task-${idNumber}">
             <label for="task-${idNumber}">${text}</label>
         </div>
-        <button>
-            <svg width="25" height="25" viewBox="0 0 25 25" fill="none">
+        <button class="delete-btn" >
+            <svg class="delete-btn-svg" width="25" height="25" viewBox="0 0 25 25" fill="none">
                 <path
                     d="M10.5 2.75C10.0858 2.75 9.75 3.08579 9.75 3.5V4.25H5.5C5.08579 4.25 4.75 4.58579 4.75 5C4.75 5.41421 5.08579 5.75 5.5 5.75H19.5C19.9142 5.75 20.25 5.41421 20.25 5C20.25 4.58579 19.9142 4.25 19.5 4.25H15.25V3.5C15.25 3.08579 14.9142 2.75 14.5 2.75H10.5Z"
                     fill="#F06A6D" />
@@ -38,6 +44,18 @@ const createNewTask = function (text) {
     `;
     task.classList = 'task';
     todoListContainer.appendChild(task);
+
+    task.addEventListener('click', deleteHandler);
+}
+
+const deleteHandler = function (e) {
+    // console.log(e);
+    if(e.target.classList.contains('delete-btn') ||
+             e.target.classList.contains('delete-btn-svg')) {
+                const btn = e.target;
+                const task = btn.parentElement;
+                todoListContainer.removeChild(task);
+        }
 }
 
 addBtn.addEventListener('click', addHandler);

@@ -3,3 +3,13 @@
 	justify-content: space-between;
 	align-items: center;
 }
+
+#alert {
+	background-color: rgb(243, 233, 194);
+	display: block flex;
+	align-items: center;
+	gap: 1rem;
+	width: fit-content;
+	padding: 0.5rem;
+	display: none;
+}
