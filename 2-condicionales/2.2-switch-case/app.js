@@ -1,5 +1,7 @@
-let day = 'sabado';
+let day = 'lunes';
+let userImput;
 
+userImput = prompt("ingresa un día de la semana");
 switch(day) {
     case 'lunes':
         console.log('Sumergirme en mi propia miseria');
@@ -19,7 +21,7 @@ switch(day) {
         console.log('Ese no es un día de la semana');
 }
 
-let mes = '2';
+/*let mes = '2';
 switch(mes){
     case 1:
         console.log('Es Enero');
@@ -47,7 +49,7 @@ if(operador === '+') {
     console.log('La resta de ', num1, 'y', num2, 'es igual a ', num1 - num2);
 }*/
 
-switch(operador) {
+/*switch(operador) {
     case '+':
         console.log('La suma de ', num1, 'y', num2, 'es igual a ', num1 + num2);
         break;
@@ -56,4 +58,4 @@ switch(operador) {
         break;
     default:
         alert('ingresa un operador válido');
-}
+}*/
