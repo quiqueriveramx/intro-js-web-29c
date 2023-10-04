@@ -1,18 +1,26 @@
 const todoInput = document.querySelector('#todo-input');
 const addBtn = document.querySelector('#add');
+const form = document.querySelector('form');
 const todoListContainer = document.querySelector('#todo-list');
 const alertBanner = document.querySelector('#alert')
 let idNumber = 0;
 
-const addHandler = function () {
-    const todoText = todoInput.value;
-    if(todoText !== '') {
+const addHandler = function (e) {
+    console.log(e);
+    const appendToContainer = '';
+    const radios = document.querySelectorAll('input[name="status"]');
+    console.log(radios)
+    if(e.target.id === 'add'){
+        const todoText = todoInput.value;
+        if(todoText !== '') {
         alertBanner.style.display = 'none';
         createNewTask(todoText);
         todoInput.value = '';
-    } else {
+        } else {
         alertBanner.style.display = 'block';
+        }
     }
+    
 }
 
 const createNewTask = function (text) {
@@ -58,4 +66,4 @@ const deleteHandler = function (e) {
         }
 }
 
-addBtn.addEventListener('click', addHandler);
+form.addEventListener('click', addHandler);

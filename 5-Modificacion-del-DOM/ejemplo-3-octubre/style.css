@@ -1,0 +1,11 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+#login {
+	background-color: rgb(181, 213, 202);
+}
+#cuenta {
+	background-color: rgb(204, 179, 228);
+}
